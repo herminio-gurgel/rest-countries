@@ -1,4 +1,4 @@
-import './assets/main.css'
+import './assets/main.scss'
 
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
@@ -14,6 +14,11 @@ import router from './router'
 const vuetify = createVuetify({
   components,
   directives,
+  defaults: {
+    VMain: {
+      class: 'appWidth mx-auto',
+    },
+  },
 })
 
 const app = createApp(App)
