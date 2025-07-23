@@ -1,5 +1,22 @@
 {
   "name": "Basic Node.js",
   "build": { "dockerfile": "Dockerfile" },
-  "remoteUser": "node"
+  "remoteUser": "node",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "vivaxy.vscode-conventional-commits",
+        "seatonjiang.gitmoji-vscode",
+        "formulahendry.auto-rename-tag",
+        "streetsidesoftware.code-spell-checker-portuguese-brazilian",
+        "streetsidesoftware.code-spell-checker",
+        "GitHub.copilot",
+        "GitHub.copilot-chat",
+        "esbenp.prettier-vscode",
+        "mhutchie.git-graph",
+        "eamodio.gitlens",
+        "Vue.volar"
+      ]
+    }
+  }
 }
