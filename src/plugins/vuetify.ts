@@ -8,9 +8,31 @@ import * as directives from 'vuetify/directives'
 const vuetify = createVuetify({
   components,
   directives,
+  theme: {
+    themes: {
+      light: {
+        colors: {
+          background: '#FCFCFC',
+        },
+      },
+      dark: {
+        colors: {
+          background: '#202c36',
+          surface: '#2b3844',
+        },
+      },
+    },
+  },
   defaults: {
+    VAppBar: {
+      VRow: {
+        noGutters: true,
+        class: 'appWidth mx-auto my-auto',
+        align: 'center',
+      },
+    },
     VMain: {
-      class: 'appWidth mx-auto',
+      class: 'appWidth mx-auto w-100',
     },
   },
 })
