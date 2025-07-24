@@ -2,7 +2,7 @@ import { mount } from '@vue/test-utils'
 import { expect, test, vi } from 'vitest'
 import AppTitle from '../AppTitle.vue'
 
-test('should render aplication title', () => {
+test('should render application title', () => {
   const wrapper = mount(AppTitle)
   const title = wrapper.find('span')
   expect(title.text()).toBe('Where in the world?')
