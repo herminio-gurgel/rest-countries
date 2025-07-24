@@ -1,11 +1,12 @@
 <script setup lang="ts">
 import ThemeToggle from './ThemeToggle.vue'
+import AppTitle from './AppTitle.vue'
 </script>
 
 <template>
   <v-app-bar>
     <v-row>
-      <v-app-bar-title>Where in the world?</v-app-bar-title>
+      <AppTitle />
       <ThemeToggle />
     </v-row>
   </v-app-bar>
