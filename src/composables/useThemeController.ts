@@ -24,9 +24,12 @@ export function useThemeController() {
 
   const label = computed(() => (store.current === 'dark' ? 'Light Mode' : 'Dark Mode'))
 
+  const currentTheme = computed(() => store.current)
+
   return {
     toggleTheme,
     icon,
     label,
+    currentTheme,
   }
 }
