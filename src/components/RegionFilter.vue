@@ -21,7 +21,8 @@ const items = ref(['Africa', 'Americas', 'Asia', 'Europe', 'Oceania'])
     label="Filter by Region"
     variant="solo"
     v-model="filter"
-    max-width="207"
+    max-width="215"
+    hide-details
     @update:modelValue="handleFilterChange"
   >
     <template v-slot:selection="{ item, index }">

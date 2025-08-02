@@ -16,7 +16,7 @@ const handleClick = () => {
 </script>
 
 <template>
-  <v-card hover link height="365" width="265" class="mx-auto" @click="handleClick">
+  <v-card hover link height="320" width="265" class="mx-auto" @click="handleClick">
     <v-img height="160" :src="country.flags.svg" class="rounded-t-sm" cover />
     <v-divider thickness="3" />
     <v-card-title class="font-weight-bold">{{ country.name.common }}</v-card-title>

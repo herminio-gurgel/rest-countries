@@ -17,10 +17,11 @@ const search = ref()
     label="Search for a country"
     variant="solo"
     clearable
+    hide-details
     persistent-clear
     v-model="search"
     max-width="480"
-    class="mr-sm-4"
+    class="mb-4 mb-sm-0 mr-sm-4"
     @update:model-value="handleSearch"
   />
 </template>
