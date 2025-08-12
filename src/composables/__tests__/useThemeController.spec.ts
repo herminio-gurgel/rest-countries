@@ -1,6 +1,6 @@
 import { test, expect } from 'vitest'
 import { mount } from '@vue/test-utils'
-import { useThemeController } from './useThemeController'
+import { useThemeController } from '../useThemeController'
 import { defineComponent } from 'vue'
 
 import { createPinia, setActivePinia } from 'pinia'

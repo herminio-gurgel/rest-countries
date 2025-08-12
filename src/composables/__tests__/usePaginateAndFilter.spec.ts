@@ -1,8 +1,8 @@
 import { test, expect } from 'vitest'
-import { usePaginateAndFilter } from './usePaginateAndFilter'
+import { usePaginateAndFilter } from '../usePaginateAndFilter'
 import { ref, defineComponent } from 'vue'
 import { createApp } from 'vue'
-import vuetify from '../plugins/vuetify'
+import vuetify from '../../plugins/vuetify'
 import type { Country } from '@yusifaliyevpro/countries/types'
 
 test('should filter countries by name and region', () => {
