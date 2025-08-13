@@ -34,5 +34,5 @@ test('should navigate to country detail when clicked', async () => {
   const { useRouter } = await import('vue-router')
   const router = useRouter()
 
-  expect(router.push).toHaveBeenCalledWith({ name: 'detail', params: { code: 'MDA' } })
+  expect(router.push).toHaveBeenCalledWith({ name: 'detail', params: { cca3: 'mda' } })
 })

@@ -11,7 +11,7 @@ const props = defineProps({
 const router = useRouter()
 
 const handleClick = () => {
-  router.push({ name: 'detail', params: { code: props.country.cca3 } })
+  router.push({ name: 'detail', params: { cca3: props.country.cca3.toLowerCase() } })
 }
 </script>
 

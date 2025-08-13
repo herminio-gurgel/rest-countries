@@ -14,9 +14,10 @@ const router = createRouter({
           component: () => import('../views/HomeView.vue'),
         },
         {
-          path: 'detail',
+          path: 'detail/:cca3',
           name: 'detail',
           component: () => import('../views/DetailView.vue'),
+          props: true,
         },
       ],
     },
