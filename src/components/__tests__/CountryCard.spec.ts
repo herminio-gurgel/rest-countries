@@ -1,14 +1,19 @@
 import { mount } from '@vue/test-utils'
 import { expect, test, vi } from 'vitest'
 import CountryCard from '../CountryCard.vue'
+import { createVuetify } from 'vuetify'
+import * as components from 'vuetify/components'
+
+const vuetify = createVuetify({ components })
+
+const mockPush = vi.fn()
+vi.mock('vue-router', () => ({
+  useRouter: () => ({
+    push: mockPush,
+  }),
+}))
 
 test('should navigate to country detail when clicked', async () => {
-  vi.mock('vue-router', () => ({
-    useRouter: vi.fn().mockReturnValue({
-      push: vi.fn(),
-    }),
-  }))
-
   const wrapper = mount(CountryCard, {
     props: {
       country: {
@@ -28,11 +33,15 @@ test('should navigate to country detail when clicked', async () => {
         population: 2617820,
       },
     },
+    global: {
+      plugins: [vuetify],
+    },
   })
-  await wrapper.trigger('click')
 
-  const { useRouter } = await import('vue-router')
-  const router = useRouter()
+  mockPush.mockClear()
 
-  expect(router.push).toHaveBeenCalledWith({ name: 'detail', params: { cca3: 'mda' } })
+  const card = wrapper.find('.v-card')
+  await card.trigger('click')
+
+  expect(mockPush).toHaveBeenCalledWith({ name: 'detail', params: { cca3: 'mda' } })
 })

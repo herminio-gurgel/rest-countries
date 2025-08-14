@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { useRouter } from 'vue-router'
+import InfoField from '@/components/InfoField.vue'
 
 const props = defineProps({
   country: {
@@ -16,14 +17,53 @@ const handleClick = () => {
 </script>
 
 <template>
-  <v-card hover link height="320" width="265" class="mx-auto" @click="handleClick">
-    <v-img height="160" :src="country.flags.svg" class="rounded-t-sm" cover />
-    <v-divider thickness="3" />
-    <v-card-title class="font-weight-bold">{{ country.name.common }}</v-card-title>
-    <v-card-text>
-      <p class="mb-2"><span class="font-weight-bold">Population</span>: {{ country.population }}</p>
-      <p class="mb-2"><span class="font-weight-bold">Region</span>: {{ country.region }}</p>
-      <p><span class="font-weight-bold">Capital</span>: {{ country.capital[0] }}</p>
-    </v-card-text>
-  </v-card>
+  <v-hover>
+    <template v-slot:default="{ isHovering, props }">
+      <v-card
+        v-bind="props"
+        hover
+        link
+        height="320"
+        width="265"
+        class="mx-auto"
+        @click="handleClick"
+      >
+        <div class="image-container">
+          <v-img
+            height="160"
+            :src="country.flags.svg"
+            class="rounded-t-sm country-flag-image"
+            :class="{ zoomed: isHovering }"
+            cover
+          />
+        </div>
+        <v-divider thickness="3" />
+        <v-card-title class="font-weight-bold">{{ country.name.common }}</v-card-title>
+        <v-card-text>
+          <InfoField
+            label="Population"
+            :value="new Intl.NumberFormat().format(country.population)"
+          />
+          <InfoField label="Region" :value="country.region" />
+          <InfoField label="Capital" :value="country.capital.join(', ')" />
+        </v-card-text>
+      </v-card>
+    </template>
+  </v-hover>
 </template>
+
+<style scoped>
+.image-container {
+  overflow: hidden;
+  height: 160px;
+}
+
+.country-flag-image {
+  transition: transform 0.3s ease-in-out;
+  transform: scale(1);
+}
+
+.country-flag-image.zoomed {
+  transform: scale(1.1);
+}
+</style>
