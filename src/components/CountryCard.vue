@@ -42,7 +42,7 @@ const handleClick = () => {
         <v-card-text>
           <InfoField
             label="Population"
-            :value="new Intl.NumberFormat().format(country.population)"
+            :value="new Intl.NumberFormat('en-US').format(country.population)"
           />
           <InfoField label="Region" :value="country.region" />
           <InfoField label="Capital" :value="country.capital.join(', ')" />
