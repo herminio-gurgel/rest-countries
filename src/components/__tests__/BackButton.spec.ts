@@ -9,7 +9,7 @@ const vuetify = createVuetify({ components })
 test('should navigate to home when clicked', async () => {
   vi.mock('vue-router', () => ({
     useRouter: vi.fn().mockReturnValue({
-      push: vi.fn(),
+      back: vi.fn(),
     }),
   }))
 
@@ -23,5 +23,5 @@ test('should navigate to home when clicked', async () => {
   const { useRouter } = await import('vue-router')
   const router = useRouter()
 
-  expect(router.push).toHaveBeenCalledWith('/')
+  expect(router.back).toHaveBeenCalled()
 })
