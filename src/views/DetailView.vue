@@ -45,14 +45,14 @@ watch(
   <APIFeedback :loading="loading" :error="error" @reload="fetchCountryByCode(props.cca3)" />
 
   <div v-if="!loading && !error">
-    <div class="d-md-flex align-center">
+    <div class="d-md-flex align-start">
       <v-img :src="country.flags.svg" class="rounded-lg border-sm mr-md-6 w-md-50" />
       <div>
         <p class="text-h4 font-weight-bold mb-6">{{ country.name.common }}</p>
         <div
           class="mb-10 d-flex flex-column flex-sm-row flex-md-column flex-lg-row justify-sm-space-between"
         >
-          <div class="mb-10 mb-sm-0 mb-md-10 pr-sm-3">
+          <div class="mb-10 mb-sm-0 mb-md-10 mb-lg-0 pr-sm-3">
             <InfoField label="Native Name" :value="nativeNamesFormatted" />
             <InfoField label="Population" :value="populationFormatted" />
             <InfoField label="Region" :value="country.region" />
