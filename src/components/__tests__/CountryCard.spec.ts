@@ -3,8 +3,10 @@ import { expect, test, vi } from 'vitest'
 import CountryCard from '../CountryCard.vue'
 import { createVuetify } from 'vuetify'
 import * as components from 'vuetify/components'
+import ResizeObserver from 'resize-observer-polyfill'
 
 const vuetify = createVuetify({ components })
+global.ResizeObserver = ResizeObserver
 
 const mockPush = vi.fn()
 vi.mock('vue-router', () => ({

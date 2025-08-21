@@ -35,7 +35,14 @@ const handleClick = () => {
             class="rounded-t-sm country-flag-image"
             :class="{ zoomed: isHovering }"
             cover
-          />
+            :alt="`Flag of ${country.name.common}`"
+          >
+            <template v-slot:placeholder>
+              <div class="d-flex align-center justify-center fill-height">
+                <v-progress-circular color="grey-lighten-4" indeterminate></v-progress-circular>
+              </div>
+            </template>
+          </v-img>
         </div>
         <v-divider thickness="3" />
         <v-card-title class="font-weight-bold">{{ country.name.common }}</v-card-title>
