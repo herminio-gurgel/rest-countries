@@ -27,12 +27,12 @@ const vuetify = createVuetify({
     VAppBar: {
       VRow: {
         noGutters: true,
-        class: 'appWidth mx-auto my-auto',
+        class: 'app-width mx-auto my-auto',
         align: 'center',
       },
     },
     VMain: {
-      class: 'appWidth mx-auto w-100',
+      class: 'app-width mx-auto w-100',
     },
   },
 })
